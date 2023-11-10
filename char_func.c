@@ -10,10 +10,12 @@
 */
 
 
-void f_char(va_list vl)
+int f_char(va_list vl)
 {
 	char c;
 
 	c = va_arg(vl, char);
 	_putchar(c);
+
+	return (1);
 }
