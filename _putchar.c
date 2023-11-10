@@ -18,13 +18,14 @@ int _putchar(char c)
 *
 * @s: The string will be printed
 *
-* Return: void
+* Return: length of printed string
 */
 
-void _print(char *s)
+int _print(char *s)
 {
 	short int x;
 
 	for (x = 0; s[x] != '\0'; x++)
 		_putchar(s[x]);
+	return (x);
 }
