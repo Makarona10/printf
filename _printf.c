@@ -11,7 +11,7 @@
 
 int _printf(const char *format, ...)
 {
-	int _return_val, x = 0, y;
+	int _return_val;
 	va_list vl;
 	spec_s specifiers[] = {
 		{'c', f_char},

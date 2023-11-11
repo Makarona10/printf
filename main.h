@@ -14,11 +14,12 @@
 
 typedef struct specifier
 {
-	char *formatter;
+	char formatter;
 	void (*func_call)(va_list);
 } spec_s;
 
 int _printf(const char* format, ...);
+int identifier_handler(va_list vl, const char *format, spec_s spec[]);
 int _putchar(char c);
 int _print(char *s);
 int get_len(char* s);
