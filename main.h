@@ -18,6 +18,7 @@ typedef struct specifier
 	void (*func_call)(va_list);
 } spec_s;
 
+int _printf(const char* format, ...);
 int _putchar(char c);
 int _print(char *s);
 int get_len(char* s);
