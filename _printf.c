@@ -16,8 +16,10 @@ int _printf(const char *format, ...)
 	spec_s specifiers[] = {
 		{'c', f_char},
 		{'s', f_string},
-		{'r', printf_reverse}
 	};
+
+	if (format == NULL)
+		return (-1);
 
 	va_start(vl, format);
 	_return_val = identifier_handler(vl, format, specifiers);
