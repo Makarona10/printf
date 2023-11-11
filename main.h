@@ -2,6 +2,7 @@
 #define MAIN_H
 #include <stdio.h>
 #include <stdarg.h>
+#include <stdlib.h>
 
 /**
  * struct specifier - specify the sort of passed identifier
@@ -25,6 +26,5 @@ int _print(char *s);
 int get_len(char *s);
 int f_char(va_list vl);
 int f_string(va_list vl);
-int printf_reverse(va_list vl);
 
 #endif
