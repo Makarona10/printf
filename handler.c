@@ -14,44 +14,46 @@
  * Return: Lenght of the printed string
 */
 
-int identifier_handler(va_list vl, const char* form, spec_s spec[])
+int identifier_handler(va_list vl, const char *format, spec_s spec[])
 {
-	int x, y, z, p;
+	int x = 0, y, len = 0;
 
-	p = 0;
-	for (x = 0; form[x] != '\0'; x++)
+
+	if (!format)
+		return (0);
+	while (format[x] != '\0')
 	{
-		if (form[x] == '%')
+		y = 0;
+		if (format[x] == '%')
 		{
-			for (y = 0; spec[y].formatter != NULL; y++)
+			if (format[x + 1] == '%')
 			{
-				if (form[x + 1] == spec[y].formatter)
+				_putchar('%');
+				x += 1;
+				len += 1;
+			}
+			else
+			{
+				while (y < 2)
 				{
-					z = spec[y].func_call(vl);
-					if (z == -1)
-						return (-1);
-					p += z;
-					break;
+					if (format[x + 1] == spec[y].formatter)
+					{
+						len += (spec[y].func_call(vl));
+						va_arg(vl, int);
+						x += 1;
+						break;
+					}
+					y++;
 				}
 			}
-			if (spec[y].formatter == NULL && form[x + 1] != ' ')
-			{
-				if (form[x + 1] != '\0')
-				{
-					_putchar(form[x]);
-					_putchar(form[x + 1]);
-					p = p + 2;
-				}
-				else
-					return (-1);
-			}
-			x = x + 1;
 		}
 		else
 		{
-			_putchar(form[x]);
-			p++;
+			_putchar(format[x]);
+			len++;
 		}
-	}
-	return (p);
+		x++;
+	};
+	len++;
+	return (len);
 }
