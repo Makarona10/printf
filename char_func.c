@@ -14,7 +14,7 @@ int f_char(va_list vl)
 {
 	char c;
 
-	c = va_arg(vl, char);
+	c = va_arg(vl, int);
 	_putchar(c);
 
 	return (1);
