@@ -14,7 +14,7 @@ int f_string(va_list vl)
 	int x;
 
 	s = va_arg(vl, char*);
-	print(s);
+	_print(s);
 	x = get_len(s);
 
 	return (x);
