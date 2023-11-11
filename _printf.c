@@ -15,7 +15,8 @@ int _printf(const char *format, ...)
 	va_list vl;
 	spec_s specifiers[] = {
 		{'c', f_char},
-		{'s', f_string}
+		{'s', f_string},
+		{'r', printf_reverse}
 	};
 
 	va_start(vl, format);

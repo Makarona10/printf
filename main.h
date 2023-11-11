@@ -25,5 +25,6 @@ int _print(char *s);
 int get_len(char *s);
 int f_char(va_list vl);
 int f_string(va_list vl);
+int printf_reverse(va_list vl);
 
 #endif
