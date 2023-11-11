@@ -15,7 +15,7 @@
 typedef struct specifier
 {
 	char formatter;
-	void (*func_call)(va_list);
+	int (*func_call)(va_list);
 } spec_s;
 
 int _printf(const char* format, ...);
@@ -26,3 +26,4 @@ int get_len(char* s);
 int f_char(va_list vl);
 int f_string(va_list vl);
 
+#endif
