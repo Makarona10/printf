@@ -31,6 +31,7 @@ int identifier_handler(va_list vl,const char *format, spec_s spec[])
 				_putchar('%');
 				len += 1;
 				x += 1;
+				break;
 			}
 			else
 			{
