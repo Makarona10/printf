@@ -16,6 +16,8 @@ int _printf(const char *format, ...)
 	spec_s specifiers[] = {
 		{'c', f_char},
 		{'s', f_string},
+		{'i', print_int},
+		{'d', print_int},
 	};
 
 	if (format == NULL)
