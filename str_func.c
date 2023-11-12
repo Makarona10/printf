@@ -13,6 +13,9 @@ int f_string(va_list vl)
 	char *s;
 	int s_len;
 
+
+	s = va_arg(vl, char*);
+
 	if (s == NULL)
 	{
 		s = "(null)";
@@ -21,7 +24,6 @@ int f_string(va_list vl)
 	}
 	else
 	{
-		s = va_arg(vl, char*);
 		_print(s);
 		s_len = get_len(s);
 	}
