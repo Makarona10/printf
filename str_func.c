@@ -16,7 +16,7 @@ int f_string(va_list vl)
 	if (s == NULL)
 	{
 		s = "(null)";
-		print(s);
+		_print(s);
 		s_len = 6;
 	}
 	else
