@@ -19,14 +19,9 @@ int f_string(va_list vl)
 	if (s == NULL)
 	{
 		s = "(null)";
-		_print(s);
-		s_len = 6;
 	}
-	else
-	{
-		_print(s);
-		s_len = get_len(s);
-	}
+	_print(s);
+	s_len = get_len(s);
 
 	return (s_len);
 }
