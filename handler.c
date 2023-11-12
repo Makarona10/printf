@@ -34,7 +34,7 @@ int identifier_handler(va_list vl, const char *format, spec_s spec[])
 			}
 			else
 			{
-				while (y < 2)
+				while (y < 4)
 				{
 					if (format[x + 1] == spec[y].formatter)
 					{
