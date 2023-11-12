@@ -54,6 +54,5 @@ int identifier_handler(va_list vl, const char *format, spec_s spec[])
 		}
 		x++;
 	};
-	len++;
 	return (len);
 }
