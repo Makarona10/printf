@@ -7,7 +7,7 @@
 int print_int(va_list v1)
 {
 	int n = va_arg(args, int);
-	int num, last = n % 10, digit, exp = 1;
+	int num, last = n % 10, digit, hv = 1;
 	int  i = 1;
 
 	n = n / 10;
@@ -25,16 +25,16 @@ int print_int(va_list v1)
 	{
 		while (num / 10 != 0)
 		{
-			exp = exp * 10;
+			hv = hv * 10;
 			num = num / 10;
 		}
 		num = n;
-		while (exp > 0)
+		while (hv > 0)
 		{
-			digit = num / exp;
+			digit = num / hv;
 			_putchar(digit + '0');
-			num = num - (digit * exp);
-			exp = exp / 10;
+			num = num - (digit * hv);
+			hv = hv / 10;
 			i++;
 		}
 	}
