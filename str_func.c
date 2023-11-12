@@ -11,11 +11,20 @@
 int f_string(va_list vl)
 {
 	char *s;
-	int x;
+	int s_len;
 
-	s = va_arg(vl, char*);
-	_print(s);
-	x = get_len(s);
+	if (s == NULL)
+	{
+		s = "(null)";
+		print(s);
+		s_len = 6;
+	}
+	else
+	{
+		s = va_arg(vl, char*);
+		_print(s);
+		s_len = get_len(s);
+	}
 
-	return (x);
+	return (s_len);
 }
