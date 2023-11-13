@@ -1,12 +1,12 @@
 #include "main.h"
 /**
- * print_int - prints integer
- * @v1: argument to print
+ * print_int function - used to print integers
+ * @vl: the argument to print integers
  * Return: integer
  */
-int p_int(va_list v1)
+int p_int(va_list vl)
 {
-	int x = va_arg(v1, int);
+	int x = va_arg(vl, int);
 	int n, last_digit = x % 10;
 	int dig;
        	int hv = 1;
