@@ -16,22 +16,27 @@
 
 int identifier_handler(va_list vl, const char* format, spec_s spec[])
 {
-	int x = 0, y, len = 0;
+	int x = 0, y, ret, len = 0;
 
 	while (format[x] != '\0')
 	{
+		y = 0;
 		if (format[x] == '%')
 		{
-			for (y = 0; y < 4; y++)
+			while (y < 2)
 			{
 				if (format[x + 1] == spec[y].formatter)
 				{
-					len += spec[y].func_call(vl);
+					ret = spec[y].func_call(vl);
 					va_arg(vl, int);
+					if (ret == -1)
+						return (-1);
+					len += ret;
 					break;
 				}
+				y++;
 			}
-			if (y == 4 && format[x + 1] != ' ')
+			if (y == 2 && format[x + 1] != ' ')
 			{
 				if (format[x + 1] != '\0')
 				{
@@ -39,8 +44,10 @@ int identifier_handler(va_list vl, const char* format, spec_s spec[])
 					_putchar(format[x + 1]);
 					len = len + 2;
 				}
+				else
+					return (-1);
 			}
-			x++;
+			x = x + 1;
 		}
 		else
 		{
@@ -50,4 +57,4 @@ int identifier_handler(va_list vl, const char* format, spec_s spec[])
 		x++;
 	}
 	return (len);
-}	
+}
