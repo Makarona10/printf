@@ -10,30 +10,30 @@ int print_int(va_list v1)
 	int n, last_digit = x % 10,
 	int dig;
        	int hv = 1;
-	int  i = 1;
+	int  k = 1;
 
-	n = n / 10;
-	num = n;
+	x = x / 10;
+	n = x;
 
 	if (last_digit < 0)
 	{
 		_putchar('-');
-		num = -num;
 		n = -n;
-		last = -last;
-		i++;
+		x = -x;
+		last_digit = -last_digit;
+		k++;
 	}
-	if (num > 0)
+	if (n > 0)
 	{
-		while (num / 10 != 0)
+		while (n / 10 != 0)
 		{
 			hv = hv * 10;
-			num = num / 10;
+			n = n / 10;
 		}
-		num = n;
+		n = x;
 		while (hv > 0)
 		{
-			digit = num / hv;
+			dig = n / hv;
 			_putchar(digit + '0');
 			num = num - (digit * hv);
 			hv = hv / 10;
