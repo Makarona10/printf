@@ -4,7 +4,7 @@
  * @v1: argument to print
  * Return: integer
  */
-int print_int(va_list v1)
+int p_int(va_list v1)
 {
 	int x = va_arg(v1, int);
 	int n, last_digit = x % 10;
