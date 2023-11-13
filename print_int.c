@@ -35,9 +35,9 @@ int print_int(va_list v1)
 		{
 			dig = n / hv;
 			_putchar(dig + '0');
-			num = num - (digit * hv);
+			n = n - (dig * hv);
 			hv = hv / 10;
-			i++;
+			k++;
 		}
 	}
 	_putchar(last + '0');
