@@ -16,37 +16,42 @@
 
 int identifier_handler(va_list vl, const char* format, spec_s spec[])
 {
-	int x = 0, y, len = 0;
+	int x, y, z, p;
 
-	if (!format)
-		return (0);
-
-	again:
-	while (format[x] != '\0')
+	p = 0;
+	for (x = 0; format[x] != '\0'; x++)
 	{
-		y = 0;
-		while (y < 2)
+		if (format[x] == '%')
 		{
-			if (format[x] == '%' && format[x + 1] == spec[y].formatter)
+			for (y = 0; y < 4; y++)
 			{
-				len += (spec[y].func_call(vl));
-				va_arg(vl, int);
-				x += 2;
-				goto again;
+				if (format[x + 1] == spec[y].formatter)
+				{
+					z = spec[y].func_call(vl);
+					if (z == -1)
+						return (-1);
+					p += z;
+					break;
+				}
 			}
-			y++;
-		}
-		if (format[x] == '%' && (format[x + 1] != ' ' || format[x + 1] != '\0'))
-		{
-			_putchar(format[x + 1]);
-			len++;
-			x += 2;
+			if (y == 4 && format[x + 1] != ' ')
+			{
+				if (format[x + 1] != '\0')
+				{
+					_putchar(format[x]);
+					_putchar(format[x + 1]);
+					p = p + 2;
+				}
+				else
+					return (-1);
+			}
+			x = x + 1;
 		}
 		else
 		{
 			_putchar(format[x]);
-			x++;
+			p++;
 		}
 	}
-	return (len);
-}
+	return (p);
+}	
