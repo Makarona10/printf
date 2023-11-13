@@ -24,7 +24,7 @@ int identifier_handler(va_list vl, const char* format, spec_s spec[])
 	while (format[x] != '\0')
 	{
 		y = 0;
-		while (y < 2)
+		while (y < 4)
 		{
 			while (spec[y].formatter != 0)
 			{
