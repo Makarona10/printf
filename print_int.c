@@ -7,10 +7,10 @@
 int print_int(va_list v1)
 {
 	int x = va_arg(v1, int);
-	int n, last_digit = x % 10,
+	int n, last_digit = x % 10;
 	int dig;
        	int hv = 1;
-	int  k = 1;
+	int k = 1;
 
 	x = x / 10;
 	n = x;
