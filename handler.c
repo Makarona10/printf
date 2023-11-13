@@ -28,7 +28,6 @@ int identifier_handler(va_list vl, const char* format, spec_s spec[])
 				if (format[x + 1] == spec[y].formatter)
 				{
 					ret = spec[y].func_call(vl);
-					va_arg(vl, int);
 					if (ret == -1)
 						return (-1);
 					len += ret;
