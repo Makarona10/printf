@@ -34,7 +34,7 @@ int print_int(va_list v1)
 		while (hv > 0)
 		{
 			dig = n / hv;
-			_putchar(digit + '0');
+			_putchar(dig + '0');
 			num = num - (digit * hv);
 			hv = hv / 10;
 			i++;
