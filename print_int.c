@@ -40,7 +40,7 @@ int print_int(va_list v1)
 			k++;
 		}
 	}
-	_putchar(last + '0');
+	_putchar(last_digit + '0');
 
 	return (i);
 }
