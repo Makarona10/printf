@@ -23,7 +23,7 @@ int identifier_handler(va_list vl, const char* format, spec_s spec[])
 		y = 0;
 		if (format[x] == '%')
 		{
-			while (y < 2)
+			while (y < 4)
 			{
 				if (format[x + 1] == spec[y].formatter)
 				{
@@ -35,18 +35,18 @@ int identifier_handler(va_list vl, const char* format, spec_s spec[])
 				}
 				y++;
 			}
-			if (y == 2 && format[x + 1] != ' ')
+			if (y == 4 && format[x + 1] != ' ')
 			{
 				if (format[x + 1] != '\0')
 				{
 					_putchar(format[x]);
 					_putchar(format[x + 1]);
-					len = len + 2;
+					len += 2;
 				}
 				else
 					return (-1);
 			}
-			x = x + 1;
+			x++;
 		}
 		else
 		{
