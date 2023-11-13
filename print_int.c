@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * print_int function - used to print integers
+ * p_int - function  used to print integers
  * @vl: the argument to print integers
  * Return: integer
  */
@@ -9,7 +9,7 @@ int p_int(va_list vl)
 	int x = va_arg(vl, int);
 	int n, last_digit = x % 10;
 	int dig;
-       	int hv = 1;
+	int hv = 1;
 	int k = 1;
 
 	x = x / 10;
