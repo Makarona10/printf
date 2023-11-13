@@ -16,10 +16,9 @@
 
 int identifier_handler(va_list vl, const char* format, spec_s spec[])
 {
-	int x, y, z, p;
+	int x = 0, y, len = 0;
 
-	p = 0;
-	for (x = 0; format[x] != '\0'; x++)
+	while (format[x] != '\0')
 	{
 		if (format[x] == '%')
 		{
@@ -27,10 +26,8 @@ int identifier_handler(va_list vl, const char* format, spec_s spec[])
 			{
 				if (format[x + 1] == spec[y].formatter)
 				{
-					z = spec[y].func_call(vl);
-					if (z == -1)
-						return (-1);
-					p += z;
+					len += spec[y].func_call(vl);
+					va_arg(vl, int);
 					break;
 				}
 			}
@@ -40,18 +37,17 @@ int identifier_handler(va_list vl, const char* format, spec_s spec[])
 				{
 					_putchar(format[x]);
 					_putchar(format[x + 1]);
-					p = p + 2;
+					len = len + 2;
 				}
-				else
-					return (-1);
 			}
-			x = x + 1;
+			x++;
 		}
 		else
 		{
 			_putchar(format[x]);
-			p++;
+			len++;
 		}
+		x++;
 	}
-	return (p);
+	return (len);
 }	
