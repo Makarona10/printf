@@ -42,5 +42,5 @@ int print_int(va_list v1)
 	}
 	_putchar(last_digit + '0');
 
-	return (i);
+	return (k);
 }
