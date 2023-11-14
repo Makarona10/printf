@@ -28,5 +28,6 @@ int f_char(va_list vl);
 int f_string(va_list vl);
 int p_int(va_list vl);
 int p_bin(va_list vl);
-int p_unsigned_int(va_list vl); 
+int p_unsigned(va_list vl);
+int p_oct(va_list vl);
 #endif
