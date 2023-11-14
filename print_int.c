@@ -1,27 +1,29 @@
 #include "main.h"
 /**
- * p_int - function  used to print integers
+ * p_int - function used to print integers
+ *
  * @vl: the argument to print integers
- * Return: integer
+ *
+ * Return: The length of printed integer number
  */
 int p_int(va_list vl)
 {
 	int x = va_arg(vl, int);
-	int n, last_digit = x % 10;
+	int n, last_dig = x % 10;
 	int dig;
 	int hv = 1;
-	int k = 1;
+	int int_len = 1;
 
 	x = x / 10;
 	n = x;
 
-	if (last_digit < 0)
+	if (last_dig < 0)
 	{
 		_putchar('-');
 		n = -n;
 		x = -x;
-		last_digit = -last_digit;
-		k++;
+		last_dig = -last_dig;
+		int_len++;
 	}
 	if (n > 0)
 	{
@@ -31,16 +33,16 @@ int p_int(va_list vl)
 			n = n / 10;
 		}
 		n = x;
-		while (hv > 0)
+		for (; hv > 0; int_len++)
 		{
 			dig = n / hv;
 			_putchar(dig + '0');
 			n = n - (dig * hv);
 			hv = hv / 10;
-			k++;
 		}
 	}
-	_putchar(last_digit + '0');
+	
+	_putchar(last_dig + '0');
 
-	return (k);
+	return (int_len);
 }
