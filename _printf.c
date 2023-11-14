@@ -18,6 +18,7 @@ int _printf(const char *format, ...)
 		{'s', f_string},
 		{'i', p_int},
 		{'d', p_int},
+		{'b', p_bin},
 	};
 
 	if (format == NULL)
