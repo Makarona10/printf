@@ -20,7 +20,8 @@ int _printf(const char *format, ...)
 		{'d', p_int},
 		{'R', p_rot},
 		{'r', p_rev},
-		{'b', p_bin}
+		{'b', p_bin},
+		{'u', p_unsigned}
 	};
 
 	if (format == NULL)
