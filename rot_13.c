@@ -9,7 +9,6 @@
 */
 
 int p_rot(va_list vl)
-int p_rot(va_list vl)
 {
 	int x = 0;
 	int y;
