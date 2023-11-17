@@ -16,8 +16,8 @@ int p_bin(va_list vl)
 
 	for (k = 0; k < 32; k++)
 	{
-		x = ((a << (31 - i)) & n);
-		if (x >> (31 - i))
+		x = ((a << (31 - k)) & n);
+		if (x >> (31 - k))
 			flags = 1;
 		if (flags)
 		{
