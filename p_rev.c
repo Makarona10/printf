@@ -21,7 +21,7 @@ int p_rev(va_list vl)
 	while (s[len++])
 		;
 
-	for (x = (len - 1); x >= 0; x--)
+	for (x = (len - 2); x >= 0; x--)
 	{
 		_putchar(s[x]);
 	}
