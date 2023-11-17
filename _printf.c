@@ -19,7 +19,8 @@ int _printf(const char *format, ...)
 		{'i', p_int},
 		{'d', p_int},
 		{'R', p_rot},
-		{'r', p_rev}
+		{'r', p_rev},
+		{'b', p_bin}
 	};
 
 	if (format == NULL)
