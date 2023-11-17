@@ -26,5 +26,5 @@ int p_rev(va_list vl)
 		_putchar(s[x]);
 	}
 
-	return (len);
+	return (len - 1);
 }
