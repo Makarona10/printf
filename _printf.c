@@ -21,7 +21,8 @@ int _printf(const char *format, ...)
 		{'R', p_rot},
 		{'r', p_rev},
 		{'b', p_bin},
-		{'u', p_unsigned}
+		{'u', p_unsigned},
+		{'o', p_oct}
 	};
 
 	if (format == NULL)
