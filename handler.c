@@ -23,7 +23,7 @@ int identifier_handler(va_list vl, const char *format, spec_s spec[])
 		y = 0;
 		if (format[x] == '%')
 		{
-			while (y < 5)
+			while (y < 6)
 			{
 				if (format[x + 1] == spec[y].formatter)
 				{
@@ -35,7 +35,7 @@ int identifier_handler(va_list vl, const char *format, spec_s spec[])
 				}
 				y++;
 			}
-			if (y == 5 && format[x + 1] != ' ')
+			if (y == 6 && format[x + 1] != ' ')
 			{
 				if (format[x + 1] != '\0')
 				{

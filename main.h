@@ -31,5 +31,6 @@ int p_bin(va_list vl);
 int p_unsigned(va_list vl);
 int p_oct(va_list vl);
 int p_rot(va_list vl);
+int p_rev(va_list vl);
 
 #endif
