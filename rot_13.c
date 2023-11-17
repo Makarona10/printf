@@ -12,7 +12,7 @@ int p_rot(va_list vl)
 {
 	int x = 0;
 	int y;
-	char *s = va_arg(vl, char*)
+	char *s = va_arg(vl, char*);
 	char *alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char *rot = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
